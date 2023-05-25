@@ -1,0 +1,18 @@
+<h1><b>List of users</b></h1>
+
+<table border='1'>
+  <tr>
+    <th>Username</th>
+    <th>Private?</th>
+    <th></th>
+    <th></th>
+  </tr>
+  <% @users.each do |user| %>
+    <tr>
+      <td><%= user.user_name%></td>
+      <td><%= user.private? ? 'Yes' : 'No' %></td>
+      <td></td>
+      <td><%= link_to "Show details", user_show_path(user.user_name) %></td>
+    </tr>
+  <% end %>
+</table>

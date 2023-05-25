@@ -1,0 +1,20 @@
+<h1><b>List of photos</b></h1>
+
+<table border='1'>
+  <tr>
+    <th>Image</th>
+    <th>Owner</th>
+    <th>Caption</th>
+    <th>Posted</th>
+    <th>Likes</th>
+
+  </tr>
+  <% @liked_photos.each do |post| %>
+    <tr>
+      <td><%= %></td>
+      <td><%= post.user.user_name %></td>
+      <td><%= post.caption %></td>
+      <td><%=  %></td>
+    </tr>
+  <% end %>
+</table>

@@ -1,0 +1,35 @@
+<h1><b><%= @user.user_name%></b></h1>
+<dl>
+  <dt>Private</dt>
+  <dd><%= @user.private? %></dd>
+  <dt>Followers</dt>
+  <dd><%=  %></dd>
+  <dt>Following</dt>
+  <dd><%=  %></dd>
+</dl>
+
+<li><%= link_to 'Profile', users_path %></li>
+<li><%= link_to 'Liked photos', '' %></li>
+<li><%= link_to 'Feed', users_path %></li>
+<li><%= link_to 'Discover', '' %></li>
+
+<h2>Liked photos(<%= @liked_photos.count %>)</h2>
+
+<table border='1'>
+  <tr>
+    <th>Image</th>
+    <th>Owner</th>
+    <th>Caption</th>
+    <th>Posted</th>
+    <th>Likes</th>
+
+  </tr>
+  <% @liked_photos.each do |post| %>
+    <tr>
+      <td><%= %></td>
+      <td><%= post.user.user_name %></td>
+      <td><%= post.caption %></td>
+      <td><%=  %></td>
+    </tr>
+  <% end %>
+</table>

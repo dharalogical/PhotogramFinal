@@ -1,0 +1,15 @@
+<h5><b>Edit User Account</b></h5>
+<%= form_with(url: edit_user_profile_path, method: "patch") do |form| %>
+  <%= form.label :Email %>
+  <%= form.text_field :email, value: @user.email %></br>
+  <%= form.label :Private %>
+  <%= form.check_box :private %></br>
+  <%= form.label :Username %>
+  <%= form.text_field :user_name, value: @user.user_name %></br>
+  <%= form.label :Password %>
+  <%= form.password_field :password %></br>
+  <%= form.label :Passwordconfirmation %>
+  <%= form.password_field :password_confirmation %></br>
+
+  <%= form.submit 'update account' %>
+<% end %>
